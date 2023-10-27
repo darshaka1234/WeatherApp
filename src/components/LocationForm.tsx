@@ -39,7 +39,6 @@ const LocationForm = () => {
             <Field
               type="number"
               name="lat"
-              placeholder="Enter Latitude"
               className="input input-bordered  w-full max-w-xs"
             />
             <ErrorMessage name="lat" component="div" className="text-red-500" />
@@ -49,12 +48,11 @@ const LocationForm = () => {
             <Field
               type="number"
               name="lon"
-              placeholder="Enter Longitude"
               className="input input-bordered w-full max-w-xs"
             />
             <ErrorMessage name="lon" component="div" className="text-red-500" />
           </div>
-          <button type="submit" className="btn max-w-xs btn-neutral">
+          <button type="submit" className="btn max-w-xs btn-primary">
             See Weather
           </button>
         </Form>

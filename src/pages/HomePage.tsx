@@ -5,12 +5,12 @@ import MainCard from "../components/cards/MainCard";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-row ">
+    <div className="flex flex-row">
       <div>
         <MainCard />
         <LocationForm />
       </div>
-      <div className="m-5">
+      <div className="m-5 mt-10">
         <Details />
         <DailyDetails />
       </div>

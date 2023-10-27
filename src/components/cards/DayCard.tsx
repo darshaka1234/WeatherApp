@@ -2,8 +2,6 @@ import { FaCloudSunRain } from "react-icons/fa";
 import { BsFillSunFill } from "react-icons/bs";
 
 const DayCard = ({ data }: any) => {
-  console.log("cardddd", data);
-
   function getFormattedDateString(unixTimestamp: number): string {
     const date = new Date(unixTimestamp * 1000);
 
@@ -19,7 +17,7 @@ const DayCard = ({ data }: any) => {
     return Math.floor(Celsius);
   }
   return (
-    <div className="flex flex-col m-2 gap-5 px-3 py-7 mx-5 rounded-xl bg-sky-300 col-span-2">
+    <div className="flex flex-col m-2 gap-10 px-3 py-7 mx-5 rounded-xl bg-sky-300 col-span-2">
       <h1 className="flex justify-center font-medium text-xl">
         {getFormattedDateString(data.dt)}
       </h1>

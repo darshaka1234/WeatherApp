@@ -26,7 +26,7 @@ export const getCurData = createAsyncThunk<CurDataType, GetCurDataArgs>(
     const res = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=cb253ae93939cf7f6b5c39c28eb3cad6`
     );
-    console.log("one", res.data);
+
     return res.data;
   }
 );
@@ -37,7 +37,7 @@ export const getThreeData = createAsyncThunk<WeekDataType, GetCurDataArgs>(
     const res = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=cb253ae93939cf7f6b5c39c28eb3cad6`
     );
-    console.log("theree", res.data);
+
     return res.data;
   }
 );
