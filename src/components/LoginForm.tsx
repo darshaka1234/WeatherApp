@@ -1,14 +1,18 @@
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const LoginForm = () => {
+  const [err, setErr] = useState("");
+
   const navigate = useNavigate();
+
   const handleSubmit = (e: { email: string; password: string }) => {
     if (e.email === secValues.email && e.password === secValues.password) {
       navigate("/weather");
     } else {
-      console.log("Invalid Credential");
+      setErr("Invalid credential!");
     }
   };
 
@@ -28,32 +32,33 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="ml-10 mt-5 max-w-sm">
+    <div className="flex w-full  ">
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <Form className="flex flex-col gap-3">
-          <div className="flex flex-col gap-2">
+        <Form className="flex flex-col gap-7 w-full ">
+          <div className="flex flex-col gap-2  justify-center">
+            <h1 className="font-bold text-2xl ">Sign in to your account</h1>
             <label className="font-medium">Email</label>
             <Field
               type="email"
               name="email"
-              className="input input-bordered  w-full max-w-xs"
+              className="input input-bordered max-w-md"
             />
             <ErrorMessage
               name="email"
               component="div"
-              className="text-red-500"
+              className="text-red-500 justify-center"
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label className="font-medium">password</label>
+            <label className="font-medium">Password</label>
             <Field
               type="password"
               name="password"
-              className="input input-bordered w-full max-w-xs"
+              className="input input-bordered max-w-md"
             />
             <ErrorMessage
               name="password"
@@ -61,9 +66,10 @@ const LoginForm = () => {
               className="text-red-500"
             />
           </div>
-          <button type="submit" className="btn max-w-xs btn-primary">
-            Log In
+          <button type="submit" className="btn max-w-md btn-primary">
+            Sign in
           </button>
+          <p className="text-red-500">{err}</p>
         </Form>
       </Formik>
     </div>
