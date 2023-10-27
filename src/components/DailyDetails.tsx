@@ -14,10 +14,19 @@ const DailyDetails = () => {
   return (
     <div className="container grid grid-cols-7 mt-10">
       {list?.map((item, index) => {
-        if (index < 31 && 7 < index && index % 8 === 0) {
-          return <DayCard key={index} data={item} />;
+        if (more) {
+          if (index % 8 === 0) {
+            return <DayCard key={index} data={item} />;
+          } else {
+            return null;
+          }
+        } else {
+          if (index < 31 && 7 < index && index % 8 === 0) {
+            return <DayCard key={index} data={item} />;
+          } else {
+            return null;
+          }
         }
-        return null;
       })}
       <SeeMoreCard toggleMore={toggleMore} />
     </div>
