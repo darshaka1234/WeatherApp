@@ -25,6 +25,6 @@ export interface InitialStateProp {
   error?: string;
 }
 export interface GetCurDataArgs {
-  lat: number;
-  lon: number;
+  lat: number | string;
+  lon: number | string;
 }

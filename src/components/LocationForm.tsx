@@ -3,6 +3,7 @@ import * as Yup from "yup";
 
 import { useAppDispatch } from "../app/hooks";
 import { getCurData, getThreeData } from "./api/WeatherApi";
+import { GetCurDataArgs } from "../types/weatherTypes";
 
 const LocationForm = () => {
   const dispatch = useAppDispatch();
@@ -21,7 +22,7 @@ const LocationForm = () => {
     lon: "",
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: GetCurDataArgs) => {
     dispatch(getCurData(e));
     dispatch(getThreeData(e));
   };
